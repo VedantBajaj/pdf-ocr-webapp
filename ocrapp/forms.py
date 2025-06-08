@@ -6,5 +6,8 @@ class PDFUploadForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        if not cleaned_data.get("pdf_file") and not cleaned_data.get("image_file"):
-            raise forms.ValidationError("Please upload a PDF or Image.")
+        pdf = cleaned_data.get("pdf_file")
+        image = cleaned_data.get("image_file")
+        if not pdf and not image:
+            raise forms.ValidationError("Please upload a PDF or an image.")
+        return cleaned_data

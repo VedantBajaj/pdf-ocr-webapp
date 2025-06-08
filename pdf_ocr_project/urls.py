@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ocrapp import views
+from ocrapp.views import upload_pdf_or_image
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.combined_ocr_view, name='combined_ocr'),
+    path('', upload_pdf_or_image, name='upload_page'),
 ]
