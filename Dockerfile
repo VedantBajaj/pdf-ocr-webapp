@@ -26,5 +26,5 @@ COPY . /app/
 # Collect static files (if needed)
 RUN python manage.py collectstatic --noinput
 
-# Start Gunicorn server
-CMD gunicorn pdf_ocr_project.wsgi:application --bind 0.0.0.0:$PORT
+# Start Gunicorn with increased timeout (2 minutes)
+CMD gunicorn pdf_ocr_project.wsgi:application --bind 0.0.0.0:$PORT --timeout 120
