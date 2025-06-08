@@ -2,7 +2,8 @@ import pytesseract
 from pdf2image import convert_from_bytes
 from django.shortcuts import render
 from .forms import PDFUploadForm
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+if platform.system() == 'Windows':
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def upload_pdf(request):
     text_output = ""
