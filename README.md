@@ -12,3 +12,8 @@ A Django-based web app that allows users to upload a PDF file, extract text usin
 1. `pip install -r requirements.txt`
 2. `python manage.py migrate`
 3. `python manage.py runserver`
+
+## 🚀 Live Demo
+
+Check out the live app here:  
+🔗 [https://pdf-ocr-webapp.onrender.com/](https://pdf-ocr-webapp.onrender.com/)
